@@ -24,6 +24,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'angularjs-rails'
 gem 'bootstrap-sass'
 
+group :test, :development do
+  gem 'jasmine-rails'
+end
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
 end

@@ -2,7 +2,9 @@ angular.module('popcornApp.controllers')
   .controller('MoviesController',
       function($scope, MovieService){
 
-        $scope.movies = MovieService.movies();
+        MovieService.movies().then(function(data){
+          $scope.movies = data; 
+        });
 
         $scope.addFavorite = function(movie){
           movie.isFavorite = true;

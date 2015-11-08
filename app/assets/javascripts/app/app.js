@@ -18,4 +18,12 @@ angular.module('popcornApp', [
     });
 
     $locationProvider.html5Mode(true);
+})
+.filter('cleantitle', function(){
+  return function(input){
+    var title = input.replace(/\sTr[\w|\s|#|(|)|á|ñ]+/ig, "");
+    title = title.replace(/\s-–[\w|\s|#|(|)|á|ñ|-]+/ig, "");
+    title = title.replace(/\s--[\w|\s|#|(|)|á|ñ|-]+/ig, "");
+    return title.replace(/Final/, "").trim();
+  };
 });
